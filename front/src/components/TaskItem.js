@@ -79,8 +79,18 @@ const TaskItem = ({ task }) => {
 
     return (
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-            <Typography>{task.name}</Typography>
-            <Typography sx={{ color: getPriorityColor(task.priority) }}>{task.priority}</Typography>
+            <Box>
+                <Typography variant="caption" display="block" gutterBottom>
+                    Task
+                </Typography>
+                <Typography>{task.name}</Typography>
+            </Box>
+            <Box>
+                <Typography variant="caption" display="block" gutterBottom>
+                    Priority
+                </Typography>
+                <Typography sx={{ color: getPriorityColor(task.priority) }}>{task.priority}</Typography>
+            </Box>
             <ProgressBar status={progressBarStatus} />
             <Button variant="contained" color="primary" onClick={handleNextStatus}>
                 {buttonText}
